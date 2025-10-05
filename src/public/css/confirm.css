@@ -1,0 +1,38 @@
+.confirm-form__inner {
+    margin: 32px auto 0;
+    width: 74%;
+    font-size: 16px;
+}
+
+.confirm-form__table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.confirm-form__row {
+    border: 1px solid #E0DFDE;
+}
+
+.confirm-form__label,
+.confirm-form__data {
+    padding: 16px 48px;
+}
+
+.confirm-form__label {
+    width: calc(100% / 3);
+    background-color: #BAA899;
+    color: #FFF;
+    text-align: left;
+    font-weight: 400;
+}
+
+.confirm-form__btn-inner {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    gap: 32px;
+}
+
+.confirm-form__back-btn {
+    text-decoration:underline;
+}
