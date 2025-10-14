@@ -68,6 +68,7 @@ select {
     background-color: #FBFBFB;
 }
 
+/*  transparent:CSS で三角形を作る 上下左右のボーダーを使って矢印っぽく見せているだけ */
 .search-form__data::after {
     position: absolute;
     top: 50%;
@@ -161,7 +162,10 @@ select {
     height: 100%;
     opacity: 0;
 }
+/* 画面全体を覆う 背景レイヤー */
 
+/* :target → URL のハッシュ（例: #modal-id）が一致したときに表示
+:target は CSS の疑似クラス「URL のハッシュが自分の ID と一致したときに適用されるスタイル」 */
 .modal:target {
     visibility: visible;
     opacity: 1;
@@ -176,15 +180,19 @@ select {
     height: 100%;
 }
 
+/* モーダル内部は .modal__inner で画面の真ん中に表示 */
 .modal__inner {
     position: absolute;
     top: 50%;
     left: 50%;
+    /* top: 50%;left: 50%; → 親の高さと幅の 50%の位置 に配置 
+    これだけだとモーダルの 左上の角が中央に来る だけ*/
     width: 50%;
     border: 1px solid #8B7969;
     background-color: #fff;
     box-shadow: 4px 4px 4px rgba(139, 121, 105, 0.25);
     transform: translate(-50%, -50%);
+    /* 自分自身の幅・高さの半分だけ左上に移動 */
 }
 
 .modal__content {

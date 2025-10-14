@@ -21,9 +21,9 @@
     align-items: flex-start;
 }
 
-/* .contact-form__required {
+.contact-form__required {
     color: #FF9494;
-} */
+}
 
 .contact-form__input {
     padding: 8px 16px;

@@ -11,7 +11,7 @@
         <form action="confirm" method="post">
             @csrf
             <div class="contact-form__group contact-form__name-group">
-                <label class="contact-form__label" for="name">お名前</label>
+                <label class="contact-form__label" for="name">お名前<span class="contact-form__required">※</span></label>
                 <div class="contact-form__name-inputs">
                     <input class="contact-form__input contact-form__name-input" type="text" name="first_name" id="name" value="{{ old('first_name') }}" placeholder="例：山田">
                     <input class="contact-form__input contact-form__name-input" type="text" name="last_name" id="name" value="{{ old('last_name') }}" placeholder="例：太郎">
@@ -31,7 +31,7 @@
             </div>
 
             <div class="contact-form__group">
-                <label class="contact-form__label">性別</label>
+                <label class="contact-form__label">性別<span class="contact-form__required">※</span></label>
                 <div class="contact-form__gender-inputs">
                     <div class="contact-form__gender-option">
                         <label class="contact-form__gender-label">
@@ -57,7 +57,7 @@
                         </label>
                     </div>
                 </div>
-                <p class="contact-formerror">
+                <p class="contact-form__error-message">
                     @error('gender')
                     {{ $message }}
                     @enderror
@@ -65,9 +65,9 @@
             </div>
 
             <div class="contact-form__group">
-                <label class="contact-form__label" for="email">メールアドレス</label>
+                <label class="contact-form__label" for="email">メールアドレス<span class="contact-form__required">※</span></label>
                 <input class="contact-form__input" type="email" name="email" id="email" value="{{ old('email') }}" placeholder="例：test@example.com">
-                <p class="contact-formerror">
+                <p class="contact-form__error-message">
                     @error('email')
                     {{ $message }}
                     @enderror
@@ -75,7 +75,7 @@
             </div>
 
             <div class="contact-form__group">
-                <label class="contact-form__label" for="tel">電話番号</label>
+                <label class="contact-form__label" for="tel">電話番号<span class="contact-form__required">※</span></label>
                 <div class="contact-form__tel-inputs">
                     <input class="contact-form__input contact-form__tel-input" type="tel" name="tel_1" id="tel"
                     value="{{ old('tel_1') }}">
@@ -86,7 +86,7 @@
 
                     <input class="contact-form__input contact-form__tel-input" type="tel" name="tel_3" value="{{ old('tel_3') }}">
                 </div>
-                <p class="contact-formerror">
+                <p class="contact-form__error-message">
                      @if ($errors->has('tel_1'))
                      {{$errors->first('tel_1')}}
                      @elseif ($errors->has('tel_2'))
@@ -98,9 +98,9 @@
             </div>
 
             <div class="contact-form__group">
-                <label class="contact-form__label" for="address">住所</label>
+                <label class="contact-form__label" for="address">住所<span class="contact-form__required">※</span></label>
                     <input class="contact-form__input" type="text" name="address" id="address" value="{{ old ('address') }}" placeholder="例：東京都渋谷区千駄ヶ谷1-2-3">
-                <p class="contact-formerror">
+                <p class="contact-form__error-message">
                     @error('address')
                     {{ $message }}
                     @enderror
@@ -115,7 +115,7 @@
 
 
             <div class="contact-form__group">
-                <label class="contact-form__label">お問い合わせの種類</label>
+                <label class="contact-form__label">お問い合わせの種類<span class="contact-form__required">※</span></label>
                 <div class="contact-form__select-inner">
                     <select class="contact-form__select" name="category_id" id="category_id">
                         <option disabled selected>選択してください</option>
@@ -125,7 +125,7 @@
                         @endforeach
                     </select>
                 </div>
-                <p class="contact-formerror">
+                <p class="contact-form__error-message">
                     @error('category_id')
                     {{ $message }}
                     @enderror
@@ -133,9 +133,9 @@
             </div>
 
             <div class="contact-form__group">
-                <label class="contact-form__label" for="detail">お問い合わせ内容</label>
+                <label class="contact-form__label" for="detail">お問い合わせ内容<span class="contact-form__required">※</span></label>
                 <textarea class="contact-form__textarea" name="detail" id="" cols="30" rows="10" placeholder="お問い合わせ内容をご記載ください">{{ old('detail') }}</textarea>
-                <p class="contact-formerror">
+                <p class="contact-form__error-message">
                     @error('detail')
                     {{ $message }}
                     @enderror
